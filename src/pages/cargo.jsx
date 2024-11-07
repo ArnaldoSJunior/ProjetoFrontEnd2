@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 function Cargos() {
     const [cargo, setCargo] = useState({
-        id: "",  // Garantir que o id esteja presente no estado
+        id: "",  
         nome: "",
         descricao: "",
         salarioBase: "",
@@ -11,7 +11,7 @@ function Cargos() {
     });
     const [cargos, setCargos] = useState([]);
 
-    // Função para listar os cargos
+    
     function listarCargos() {
         axios.get("http://localhost:5078/Cargos")
             .then((resposta) => {
@@ -27,7 +27,7 @@ function Cargos() {
         listarCargos();
     }, []);
 
-    // Função para excluir um cargo
+    
     function excluir(id) {
         axios.delete("http://localhost:5078/Cargos/" + id)
             .then(() => {
@@ -38,7 +38,7 @@ function Cargos() {
             });
     }
 
-    // Função para renderizar as linhas da tabela de cargos
+    
     function Linha(cargo) {
         return (
             <tr key={cargo.id}>
@@ -55,15 +55,15 @@ function Cargos() {
         );
     }
 
-    // Função para iterar sobre os cargos e gerar as linhas da tabela
+    
     function Linhas() {
         return cargos.map((cargo) => Linha(cargo));
     }
 
-    // Função para cancelar a edição de cargo
+    
     function cancelar() {
         setCargo({
-            id: "",  // Garantir que o id seja limpo ao cancelar
+            id: "",  
             nome: "",
             descricao: "",
             salarioBase: "",
@@ -72,7 +72,7 @@ function Cargos() {
         console.log("Formulário cancelado e estado do cargo limpo.");
     }
 
-    // Função para lidar com a digitação no formulário
+    
     function aoDigitar(e) {
         setCargo({
             ...cargo,
@@ -80,13 +80,12 @@ function Cargos() {
         });
     }
 
-    // Função para editar um cargo
+    
     function editar(cargo) {
         setCargo(cargo);
         console.log("Editando cargo:", cargo);
     }
 
-    // Função para salvar o cargo (novo ou editado)
     function salvar() {
         const payload = {
             nome: cargo.nome,
@@ -98,21 +97,21 @@ function Cargos() {
         console.log("Salvando cargo:", payload);
 
         if (cargo.id) {
-            // Se o cargo tem id, então é uma edição
+            
             axios.put("http://localhost:5078/Cargos/" + cargo.id, payload)
                 .then(() => {
                     listarCargos();
-                    cancelar(); // Limpar os campos após salvar
+                    cancelar(); 
                 })
                 .catch((error) => {
                     console.error("Erro ao salvar cargo:", error);
                 });
         } else {
-            // Se não tem id, então é uma criação
+            
             axios.post("http://localhost:5078/Cargos", payload)
                 .then(() => {
                     listarCargos();
-                    cancelar(); // Limpar os campos após salvar
+                    cancelar(); 
                 })
                 .catch((error) => {
                     console.error("Erro ao criar cargo:", error);
@@ -120,7 +119,7 @@ function Cargos() {
         }
     }
 
-    // Formulário para criar ou editar um cargo
+   
     function Formulario() {
         console.log("Renderizando formulário para cargo:", cargo);
         return (
@@ -167,10 +166,10 @@ function Cargos() {
         );
     }
 
-    // Função para criar um novo cargo
+   
     function novoCargo() {
         setCargo({
-            id: "",  // Garantir que o id seja limpo para nova criação
+            id: "",  
             nome: "",
             descricao: "",
             salarioBase: "",
@@ -178,7 +177,7 @@ function Cargos() {
         });
     }
 
-    // Função para renderizar a tabela de cargos
+    
     function Tabela() {
         return (
             <>
@@ -202,13 +201,13 @@ function Cargos() {
         );
     }
 
-    // Renderiza o conteúdo principal: ou a tabela de cargos ou o formulário
+  
     function conteudoPrincipal() {
         console.log("Renderizando conteúdo principal.");
         if (!cargo.id) {
-            return Tabela(); // Se o cargo não tem id, renderiza a tabela
+            return Tabela(); 
         } else {
-            return Formulario(); // Se o cargo tem id, renderiza o formulário de edição
+            return Formulario(); 
         }
     }
 
