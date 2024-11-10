@@ -152,7 +152,7 @@ function Cargos() {
       <>
         <button onClick={() => {novoCargo();}}>Novo Cargo</button>
         <table>
-          <thead>
+         {listarCargos()}
             <tr>
               <th>ID</th>
               <th>Nome</th>
@@ -161,10 +161,7 @@ function Cargos() {
               <th>Departamento</th>
               <th>Ações</th>
             </tr>
-          </thead>
-          <tbody>
             {Linhas(cargos)}
-          </tbody>
         </table>
       </>
     );

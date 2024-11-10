@@ -128,7 +128,7 @@ function Departamentos(){
             <>
               <button onClick={()=>{novoDepartamento();}}>Novo Departamento</button> 
                 <table>
-                    
+                    {listarDepartamentos()}
                 <tr>
                     <th>ID</th>
                     <th>Nome do departamento</th>
