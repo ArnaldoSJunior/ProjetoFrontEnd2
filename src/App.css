@@ -1,5 +1,17 @@
+#tabela {
+  display: flex;
+  flex-direction: column;
+}
+
+#cadastro{
+  text-align: center;
+}
+
 .main-head {
     grid-area: header;
+    text-align: center;
+    font-weight: bold;
+    font-size: xxx-large;
   }
   .content {
     grid-area: content;
@@ -41,7 +53,7 @@
 
   #root > * {
       border: 2px solid #f08c00;
-      background-color: #ffec99;
+      background-color: red;
       border-radius: 5px;
       padding: 10px;
   }
