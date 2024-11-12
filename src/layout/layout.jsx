@@ -11,8 +11,8 @@ function Layout(props) {
     <Header />
     <Nav/>
     <main>{props.children}</main>
-    <Aside />
-    <Footer/>
+    {/* <Aside /> */}
+    {/* <Footer/> */}
     </>
     );
     }

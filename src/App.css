@@ -1,3 +1,11 @@
+.main {
+  width: 1040px !important;
+}
+
+main {
+  width: 1040px;
+}
+
 #tabela2 {
   text-align: center;
 }
@@ -20,6 +28,7 @@
     text-align: center;
     font-weight: bold;
     font-size: xxx-large;
+    width: 1300px;
   }
   .content {
     grid-area: content;
@@ -28,6 +37,7 @@
   .main-nav {
     grid-area: nav;
   }
+
   .side {
     grid-area: sidebar;
   }
