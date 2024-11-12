@@ -93,8 +93,9 @@ function Departamentos(){
 
     function Formulario(){
         return (
-            <form>
+            <form id="tabela2">
                 <label htmlFor="nomeDep" >Nome do Departamento</label>
+                <br />
                 <input type="text" id="nomeDep" name="nomeDepartamento"
                     value={departamento.nomeDepartamento}
                     onChange={aoDigitar}
@@ -105,6 +106,7 @@ function Departamentos(){
 
 
                 <label htmlFor="desc" >Descrição</label>
+                <br />
                 <input type="text" id="desc" name="descricao" 
                     value={departamento.descricao}
                     onChange={aoDigitar}

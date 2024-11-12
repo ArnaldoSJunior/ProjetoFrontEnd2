@@ -1,3 +1,11 @@
+#tabela2 {
+  text-align: center;
+}
+
+#text-home{
+  text-align: center;
+  padding-top: 80px;
+}
 #tabela {
   display: flex;
   flex-direction: column;
@@ -50,10 +58,11 @@
       "ad"
       "footer";
   }
+  
 
   #root > * {
       border: 2px solid #f08c00;
-      background-color: red;
+      background-color: grey;
       border-radius: 5px;
       padding: 10px;
   }
