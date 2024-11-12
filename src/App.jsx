@@ -7,6 +7,7 @@ import Funcionarios from './pages/funcionario';
 import Departamentos from './pages/departamento';
 import Beneficios from './pages/beneficio';
 import HistoricoSalarios from './pages/historicoSalario';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

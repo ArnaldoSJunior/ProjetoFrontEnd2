@@ -32,15 +32,15 @@ function Departamentos(){
 
     function Linha(index, departamento){
         return (
-            <tr key={index}>
-                <td>{departamento.id}</td>
-                <td>{departamento.nomeDepartamento}</td>
-                <td>{departamento.descricao}</td>
-                <td>
-                   <button onClick={()=>{ excluir(departamento.id);}}>Excluir</button>
-                   <button onClick={()=> {editar(departamento);}}>Editar</button>
-                </td>
-            </tr>
+            <tr key={index} className="table-striped table-bordered table-hover">
+            <td>{departamento.id}</td>
+            <td>{departamento.nomeDepartamento}</td>
+            <td>{departamento.descricao}</td>
+            <td>
+            <button className="btn btn-danger btn-sm" onClick={() => excluir(departamento.id)}>Excluir</button>
+            <button className="btn btn-primary btn-sm ms-2" onClick={() => editar(departamento)}>Editar</button>
+            </td>
+        </tr>
         );
     }
 
@@ -100,14 +100,22 @@ function Departamentos(){
                     onChange={aoDigitar}
                 />
 
+            <br></br>
+            <br></br>
+
+
                 <label htmlFor="desc" >Descrição</label>
                 <input type="text" id="desc" name="descricao" 
                     value={departamento.descricao}
                     onChange={aoDigitar}
                 />
                 
-          <button type="button" onClick={salvar}>Salvar</button>
-          <button type="button" onClick={cancelar}>Cancelar</button>
+            <br></br>
+            <br></br>
+            <br></br>
+                
+          <button class="btn btn-success" type="button" onClick={salvar}>Salvar</button>
+          <button class="btn btn-danger" type="button" onClick={cancelar}>Cancelar</button>
 
             </form>
         );
@@ -126,7 +134,7 @@ function Departamentos(){
     function Tabela(departamentos){
         return(
             <>
-              <button onClick={()=>{novoDepartamento();}}>Novo Departamento</button> 
+              <button className="btn btn-success btn-sm" onClick={()=>{novoDepartamento();}}>Novo Departamento</button> 
                 <table>
                     {listarDepartamentos()}
                 <tr>
@@ -150,8 +158,8 @@ function Departamentos(){
     }
 
     return(       
-        <div>
-		    <h1>Cadastro de Departamentos</h1>            
+        <div id='tabela'>
+		    <h1 id="cadastro">Cadastro de Departamentos</h1>            
             { conteudoPrincipal() }                               
         </div>
     );
