@@ -116,7 +116,7 @@ function Departamentos(){
             <br></br>
             <br></br>
                 
-          <button class="btn btn-success" type="button" onClick={salvar}>Salvar</button>
+          <button class="btn btn-success" id="btnSalvar" type="button" onClick={salvar}>Salvar</button>
           <button class="btn btn-danger" type="button" onClick={cancelar}>Cancelar</button>
 
             </form>
@@ -140,7 +140,7 @@ function Departamentos(){
                 <table>
                     {listarDepartamentos()}
                 <tr>
-                    <th>ID</th>
+                    <th id="id">ID</th>
                     <th>Nome do departamento</th>
                     <th>Descrição</th>
                     <th>Ações</th>
@@ -161,7 +161,7 @@ function Departamentos(){
 
     return(       
         <div id='tabela'>
-		    <h1 id="cadastro">Cadastro de Departamentos</h1>            
+		    <h1 id="receba">Cadastro de Departamentos</h1>            
             { conteudoPrincipal() }                               
         </div>
     );

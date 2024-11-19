@@ -7,6 +7,7 @@ import Funcionarios from './pages/funcionario';
 import Departamentos from './pages/departamento';
 import Beneficios from './pages/beneficio';
 import HistoricoSalarios from './pages/historicoSalario';
+import Pontos from './pages/ponto';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
        <Route path="/departamento" element={<Layout><Departamentos/></Layout>} />
        <Route path="/beneficio" element={<Layout><Beneficios/></Layout>} />
        <Route path="/historicoSalario" element={<Layout><HistoricoSalarios/></Layout>} />
+       <Route path="/ponto" element={<Layout><Pontos/></Layout>} />
       
     </Routes>
     </>

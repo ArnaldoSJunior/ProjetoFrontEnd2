@@ -10,6 +10,7 @@ function Nav(){
                 <li><NavLink to="/departamento">Departamentos</NavLink></li>
                 <li><NavLink to="/beneficio">Beneficios</NavLink></li>
                 <li><NavLink to="/historicoSalario">Histórico Salários</NavLink></li>
+                <li><NavLink to="/ponto">Ponto</NavLink></li>
 
                 
         
